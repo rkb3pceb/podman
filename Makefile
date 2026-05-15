@@ -49,7 +49,8 @@ test: unit integration ## Run all tests
 
 .PHONY: unit
 unit: ## Run unit tests
-	$(GO_TEST) -v ./...
+	# Use -count=1 to disable test result caching
+	$(GO_TEST) -v -count=1 ./...
 
 .PHONY: integration
 integration: ## Run integration tests
